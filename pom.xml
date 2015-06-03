@@ -10,4 +10,26 @@
   		<version>4.0.28.Final</version>
   	</dependency>
   </dependencies>
+  <build>
+      <plugins>
+          <plugin>
+              <groupId>org.codehaus.mojo</groupId>
+              <artifactId>exec-maven-plugin</artifactId>
+              <version>1.2.1</version>
+              <configuration>
+                  <executable>java</executable>
+                  <arguments>
+                      <argument>-classpath</argument>
+                      <classpath/>
+                      <argument>${mainClass}</argument>
+                      <argument>${port}</argument>
+                  </arguments>
+              </configuration>
+          </plugin>
+      </plugins>
+  </build>
+  <properties>
+      <mainClass>com.freddiecoleman.ChatServer</mainClass>
+      <port>9999</port>
+  </properties>
 </project>
